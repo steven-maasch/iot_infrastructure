@@ -52,12 +52,15 @@ class iot_infrastructure (
     $dockerfiles_dir = $::iot_infrastructure::params::dockerfiles_dir
 ) inherits iot_infrastructure::params {
 
-    class { 'git': }
+    class { 'git': } ~>
     class { 'docker':
         docker_users => [ $system_username ],
         socket_group => 'dockerroot' # TODO:
-    }
-    class { 'docker_compose': }
+    } ~>
+    class { 'docker_compose': } ~>
+    class { 'iot_infrastructure::install': } ~>
+    class { 'iot_infrastructure::config': } ~>
+    class { 'iot_infrastructure::service': }
 
     contain 'iot_infrastructure::install'
     contain 'iot_infrastructure::config'
