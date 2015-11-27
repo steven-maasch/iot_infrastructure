@@ -6,7 +6,6 @@ class iot_infrastructure::install inherits iot_infrastructure {
     $system_user_home = $::iot_infrastructure::system_user_home
     $dockerfiles_dir = $::iot_infrastructure::dockerfiles_dir
 
-
     contain 'git'
     contain 'docker'
     contain 'docker_compose'

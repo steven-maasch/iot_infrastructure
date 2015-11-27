@@ -6,4 +6,5 @@ class iot_infrastructure::params {
     $dockerfiles_dir = "$system_user_home/$dockerfiles_dirname"
     $dockerfiles_repo = 'https://github.com/steven-maasch/mmi-iot-infrastructure.git'
     $docker_compose_exec_timeout = 600
+    $docker_compose_exec_up = false
 }

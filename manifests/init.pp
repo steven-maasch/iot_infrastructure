@@ -33,6 +33,7 @@
 #      system_user_home => '/home/iot',
 #      dockerfiles_repo => 'https://github.com/steven-maasch/mmi-iot-infrastructure.git',
 #      dockerfiles_dir => '/home/iot/iot-docker',
+#      docker_compose_exec_up => true,
 #    }
 #
 # Authors
@@ -49,7 +50,8 @@ class iot_infrastructure (
     $system_username = $::iot_infrastructure::params::system_username,
     $system_user_home = $::iot_infrastructure::params::system_user_home,
     $dockerfiles_repo = $::iot_infrastructure::params::dockerfiles_repo,
-    $dockerfiles_dir = $::iot_infrastructure::params::dockerfiles_dir
+    $dockerfiles_dir = $::iot_infrastructure::params::dockerfiles_dir,
+    $docker_compose_exec_up = $::iot_infrastructure::docker_compose_exec_up
 ) inherits iot_infrastructure::params {
 
     class { 'git': }

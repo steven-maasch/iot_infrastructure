@@ -43,6 +43,7 @@ class { 'iot_infrastructure':
     system_user_home => '/home/iot',
     dockerfiles_repo => 'https://github.com/steven-maasch/mmi-iot-infrastructure.git',
     dockerfiles_dir => '/home/iot/iot-docker',
+    docker_compose_exec_up => true
 }
 ~~~
 
